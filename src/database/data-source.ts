@@ -7,10 +7,10 @@ export const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
   port: 3306,
-  username: 'javier',
-  password: 'america234',
-  database: 'back',
+  username: 'mauricio',
+  password: 'Rock371dnd33',
+  database: 'hexagonalPlan',
   entities: [User, EventEntity],
-  synchronize: true, // Usar con precaución en producción
+  synchronize: false, // Usar con precaución en producción
   logging: true,
 });

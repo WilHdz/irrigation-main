@@ -10,18 +10,18 @@ export class EventEntity {
   timestamp: Date;
 
   @Column('float')
-  distancia: number;
+  distance: number;
 
   @Column()
-  tierra: string;
+  soilhumidity: string;
 
   @Column()
   mensaje: string;
 
-  constructor(timestamp: Date, distancia: number, tierra: string, mensaje: string) {
+  constructor(timestamp: Date, distance: number, soilhumidity: string, mensaje: string) {
     this.timestamp = timestamp;
-    this.distancia = distancia;
-    this.tierra = tierra;
+    this.distance = distance;
+    this.soilhumidity = soilhumidity;
     this.mensaje = mensaje;
   }
 }

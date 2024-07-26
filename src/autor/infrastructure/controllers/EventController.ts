@@ -12,8 +12,8 @@ export class EventController {
 
   async createEvent(req: Request, res: Response): Promise<Response> {
     try {
-      const { timestamp, distancia, tierra, mensaje } = req.body;
-      const event = new EventEntity(new Date(timestamp), distancia, tierra, mensaje);
+      const { timestamp, distance, soilhumidity, mensaje} = req.body;
+      const event = new EventEntity(new Date(timestamp), distance, soilhumidity, mensaje);
       const newEvent = await this.eventService.createEvent(event);
       return res.status(201).json(newEvent);
     } catch (error) {
@@ -34,7 +34,7 @@ export class EventController {
     try {
       const { id } = req.params;
       const event = await this.eventService.getEventById(Number(id));
-      if (event !== undefined) { // Verifica si el evento es undefined
+      if (event !== undefined) { 
         return res.status(200).json(event);
       } else {
         return res.status(404).json({ message: 'Event not found' });
