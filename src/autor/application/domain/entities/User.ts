@@ -1,13 +1,20 @@
+// src/autor/application/domain/entities/users/User.ts
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity()
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
-  id: number = 0; 
-  
+  id: number;
+
   @Column()
-  username: string = '';
-  
+  username: string;
+
   @Column()
-  password: string = '';
+  password: string;
+
+  constructor(id: number, username: string, password: string) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+  }
 }
